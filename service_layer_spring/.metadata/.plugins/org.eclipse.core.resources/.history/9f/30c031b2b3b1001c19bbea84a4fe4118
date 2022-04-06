@@ -1,0 +1,9 @@
+package com.demo;
+
+public class JdbcHelloWorld {
+	
+	public static void main(String[] args) {
+		//create jdbc code
+	}
+
+}

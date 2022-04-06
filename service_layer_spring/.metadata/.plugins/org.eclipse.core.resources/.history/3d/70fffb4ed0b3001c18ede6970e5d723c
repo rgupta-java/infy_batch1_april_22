@@ -1,0 +1,18 @@
+package com.inner_classes;
+//What is inner class? a class defined inside an another class, it is like mother and child relationship
+class A{
+	
+	//top leve inner class
+	class B{
+		void foo() {
+			System.out.println("foo of B class");
+		}
+	}
+}
+public class DemoInnerClass {
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

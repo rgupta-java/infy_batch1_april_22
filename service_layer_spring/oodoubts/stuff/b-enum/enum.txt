@@ -1,0 +1,203 @@
+In depth intro enum:
+____________________
+Why enum? What was the problem with old way of multiple constants handling?
+how it worked?
+Important method inside enum?
+If-switch statement
+Customise constant value with Enum Constructor.
+Enum Collections EnumMap, EnumSet
+Enum Abstract function
+Singleton Design Pattern
+
+
+what was the problem with old way of multiple constants handling?
+___________________________________________________________
+
+
+consider: 
+
+interface Months {
+   public static final int JAN = 0;
+    public static final int FAB = 1;
+    public static final int MARCH = 2;
+    
+
+}
+
+interface Gender{
+	public static final int MALE = 0;
+	public static final int FEMALE = 1;
+}
+
+
+
+public class MyConstant{
+	
+	public static void main(String[] args) {
+		if(Months.JAN == Gender.MALE) {	
+		}	
+	}
+}
+
+Problems without eunum:
+1. no sementic meaning
+2. how to iterate all constaunts
+3. can not get size of constants
+
+Enum: typesafe way to create consants:
+____________________________________
+
+all enum extends from a special class ie called Enum
+
+Enum with custom value:
+______________________
+
+public enum Months {
+  JAN(11), FEB(22), MARCH(33);
+  
+  private int monthValue;
+  
+  Months(int monthValue){
+	  this.monthValue = monthValue;
+  }
+  
+  public int getMonthValue() {
+	  return monthValue;
+  }
+  
+}
+
+
+
+Example:
+public enum Months {
+  JAN("January", 11), FEB("Febuary",22), MARCH("March",33);
+  
+  private int monthValue;
+  private String monthName;
+  
+  Months(String monthName, int monthValue){
+	  this.monthName = monthName;
+	  this.monthValue = monthValue;
+  }
+
+}
+
+
+Iterating all enums values:
+_____________________
+Months[] months = Months.values();
+	for(Months month : months) {
+		System.out.println(month.name());
+		System.out.println(month.ordinal() +", "+ month.getMonthValue() +", "+month.getMonthName());
+	}
+
+
+
+
+enumset and enum map:
+_____________________
+enum Count {
+	
+	ONE(1), TWO(2), THREE(3), FOUR(4), FIVE(5);
+
+	private int value;
+	
+	Count(int value){
+		this.value = value;
+	}
+	
+	public int getValue(){
+		return this.value;
+	}
+
+
+}
+
+public class Counter{
+	public static void main(String[] args) {
+		
+		for(Count count : Count.values()) {
+			//System.out.println(count.name());
+		}
+		
+		for(Count temp : EnumSet.range(Count.TWO, Count.THREE)){
+			System.out.println("Name and Value :"+temp+" , "+temp.getValue());
+		}
+		
+		System.out.println("**************************");
+
+		HashMap<Count,String> map = new HashMap<>();
+		
+		map.put(Count.ONE, "For Frist Position");
+		map.put(Count.TWO, "For Second Position");
+		
+		System.out.println("From Map :"+map.get(Count.TWO));
+		
+		System.out.println("**************************");
+		
+		// But EnumMap is much efficient and having better performance.
+		
+		EnumMap<Count, String> enumMap = new EnumMap<Count, String>(Count.class);
+		enumMap.put(Count.ONE, "For Frist Position");
+		enumMap.put(Count.TWO, "For Second Position");
+		
+		System.out.println("From Enum Map :"+enumMap.get(Count.TWO));
+
+		
+		
+		
+	}
+}
+
+
+abstract method inside enum:
+___________________________
+
+public enum TrafficLight {
+	//RED, YELLOW, GREEN
+	// Red and Green signal for 30 seconds and Yellow for 10 min.
+	//RED(30), YELLOW(10), GREEN (30);
+	
+	RED(30){
+
+		@Override
+		public TrafficLight nextLight() {
+			return GREEN;
+		}},
+	YELLOW(10){
+
+		@Override
+		public TrafficLight nextLight() {
+			return RED;
+		}},
+	
+	GREEN(30){
+
+		@Override
+		public TrafficLight nextLight() {
+			return YELLOW;
+
+		}};
+	
+	private int duration;
+	
+	TrafficLight(int duration){
+	  this.duration = duration;
+	}
+
+	public int getDuration() {
+	  return duration;
+	}
+
+	public abstract TrafficLight nextLight();
+
+	
+	
+
+
+}
+© 2022 GitHub, Inc.
+Terms
+
+

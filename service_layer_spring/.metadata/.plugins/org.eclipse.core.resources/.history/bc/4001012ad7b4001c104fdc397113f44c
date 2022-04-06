@@ -1,0 +1,6 @@
+package com.demo;
+
+public class Passanger {
+	private String name;
+	
+}

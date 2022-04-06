@@ -1,0 +1,11 @@
+package com.demo;
+
+import com.internal.CalLogic;
+
+public class Cal {
+	
+	public int add(int a, int b) {
+		CalLogic calLogic=new CalLogic();
+		return calLogic.addLogic(a, b);
+	}
+}

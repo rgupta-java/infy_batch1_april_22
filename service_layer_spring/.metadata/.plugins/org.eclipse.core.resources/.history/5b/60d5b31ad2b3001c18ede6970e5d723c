@@ -1,0 +1,8 @@
+package com.funcational_programming;
+//
+public class Main {
+
+	public static void main(String[] args) {
+		
+	}
+}

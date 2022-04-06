@@ -1,0 +1,18 @@
+package com.demo;
+
+public class Passanger {
+	private String name;
+	
+	private Bike bike;
+	
+	public Passanger(String name) {
+		this.name = name;
+		bike=new Bike();
+	}
+	
+	public void travel() {
+		System.out.println("name : "+ name);
+		car.move();
+	}
+	
+}

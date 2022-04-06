@@ -1,0 +1,10 @@
+package com.demo;
+
+import org.springframework.stereotype.Component;
+
+@Component(value = "v1")
+public class Car implements Vehical{
+	public void move() {
+		System.out.println("moving in a car...");
+	}
+}

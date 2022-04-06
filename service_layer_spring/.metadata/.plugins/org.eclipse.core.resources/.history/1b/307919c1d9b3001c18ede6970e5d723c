@@ -1,0 +1,15 @@
+package com.demo_map;
+import java.util.*;
+public class DemoMap {
+
+	public static void main(String[] args) {
+		
+		Map<String, Integer>map=new HashMap<String, Integer>();
+		map.put("ekta", 78);
+		map.put("suman", 88);
+		map.put("gunika", 98);
+		map.put("raj", 100);
+	
+		
+	}
+}

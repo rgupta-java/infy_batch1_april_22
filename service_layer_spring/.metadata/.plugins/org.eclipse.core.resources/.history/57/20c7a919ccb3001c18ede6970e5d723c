@@ -1,0 +1,31 @@
+package com.oops;
+//Object orintation : abstarction encapsulation and modulary and hierarchy
+// interface and abstract class
+//abstract class: incomplete class, and it provide a common hierachy
+
+// Employee: PartTimeEmployee, FullTimeEmployee
+class Employee{
+	private int id;
+	private String name;
+	private double salary;
+	
+}
+class FullTimeEmployee extends Employee{
+	
+	private double salary;
+	private double ppf;
+	
+}
+
+class PartTimeEmployee extends Employee{
+	
+	private int noOfHr;
+	private int costOfHr;
+	
+}
+public class Demo {
+	
+	public static void main(String[] args) {
+		
+	}
+}

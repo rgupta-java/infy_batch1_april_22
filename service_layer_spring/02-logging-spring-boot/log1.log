@@ -1,0 +1,12 @@
+Starting DemoApplication using Java 17.0.2 on raj-Aspire-E5-575G with PID 12182 (/home/raj/Documents/exp3/demo/target/classes started by raj in /home/raj/Documents/exp3/demo)
+No active profile set, falling back to 1 default profile: "default"
+Tomcat initialized with port(s): 8080 (http)
+Initializing ProtocolHandler ["http-nio-8080"]
+Starting service [Tomcat]
+Starting Servlet engine: [Apache Tomcat/9.0.60]
+Initializing Spring embedded WebApplicationContext
+Root WebApplicationContext: initialization completed in 679 ms
+Starting ProtocolHandler ["http-nio-8080"]
+Tomcat started on port(s): 8080 (http) with context path ''
+Started DemoApplication in 1.258 seconds (JVM running for 2.094)
+Application shutdown requested.

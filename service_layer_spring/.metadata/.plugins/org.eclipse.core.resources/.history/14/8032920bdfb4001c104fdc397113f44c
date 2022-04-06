@@ -1,0 +1,33 @@
+package com.demo;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
+
+@Configuration	//hey spring i want to go for java config
+@ComponentScan(basePackages = {"com.demo"})
+public class MyAppConfig {
+
+	/*
+	 * 
+	<bean id="passanger" class="com.demo.Passanger" autowire="byType">
+		<property name="name" value="raj" />
+		<!-- <property name="vehical" ref="v"/> -->
+	</bean>
+
+	 */
+	
+	// <bean id="v1" class="com.demo.Car" />
+	@Bean
+	public Vehical getCar() {
+		return new Car();
+	}
+	
+	//<bean id="v2" class="com.demo.Bike" primary="true" />
+	@Primary
+	@Bean
+	public Vehical getBike() {
+		return new Bike();
+	}
+}

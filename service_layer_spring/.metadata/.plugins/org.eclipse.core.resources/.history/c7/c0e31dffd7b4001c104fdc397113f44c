@@ -1,0 +1,12 @@
+package com.demo;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Vehical vehical=new Car();
+		Passanger passanger=new Passanger("raj", vehical);
+		passanger.travel();
+	}
+}
+

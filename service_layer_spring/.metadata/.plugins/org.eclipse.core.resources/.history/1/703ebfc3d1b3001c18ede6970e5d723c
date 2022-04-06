@@ -1,0 +1,15 @@
+package com.inner_classes;
+
+public class DemoLambada {
+	
+	public static void main(String[] args) {
+		Runnable runnable=new Runnable() {
+			
+			@Override
+			public void run() {
+				System.out.println("job of the thread....");
+			}
+		};
+	}
+
+}
